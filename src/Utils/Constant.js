@@ -1,0 +1,1 @@
+//Common code [ images, logo, common text, categore]
