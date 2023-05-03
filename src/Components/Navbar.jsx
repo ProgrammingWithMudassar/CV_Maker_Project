@@ -4,9 +4,9 @@ import { Container, Stack } from '@mui/material'
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -42,10 +42,12 @@ const Navbar = () => {
     };
 
     return (
-        <>
+        <div>
             <Container>
                 <Box mt={{ xs: 1, md: 2 }} className="navbar">
+                    <Link to='/'>
                     <Typography variant="h6" color="#fff" fontWeight={600}>CV_Maker.</Typography>
+                    </Link>
                     <Button sx={{ color: '#fff', fontWeight: '600', p: "0 1.5rem" }} onClick={handleOpen}>
                         Log In
                     </Button>
@@ -81,7 +83,7 @@ const Navbar = () => {
                             <input type="password" placeholder='password' className='input' /><br />
                         </Stack>
                     </Box>
-                    <Button sx={{ width: '100%', mt: 2, fontWeight: '600' }}>Log In</Button>
+                    <Button sx={{ width: '100%', mt: 2, fontWeight: '600',p:2.3 }}>Log In</Button>
                     <Typography variant="body1" color="initial" mt={2}>
                         Create new account
                         <span style={{ cursor: 'pointer', fontWeight: "600",fontStyle:"underline" }} onClick={HandleSignUp}> SignUp</span>
@@ -123,11 +125,11 @@ const Navbar = () => {
                             <input type="password" placeholder='password' className='input' /><br />
                         </Stack>
                     </Box>
-                    <Button sx={{ width: '100%', mt: 2, fontWeight: '600' }}>Sign Up</Button>
-                    <Typography variant="body1" color="initial" mt={2}>Create new account <span style={{ cursor: 'pointer', fontWeight: "600" }} onClick={handleSecClose}> LogIn</span></Typography>
+                    <Button sx={{ width: '100%', mt: 2, fontWeight: '600',p:2.3}}>Sign Up</Button>
+                    <Typography variant="body1" color="initial" mt={2}>Already Registered <span style={{ cursor: 'pointer', fontWeight: "600" }} onClick={handleSecClose}> LogIn</span></Typography>
                 </Box>
             </Modal>
-        </>
+        </div>
     )
 }
 

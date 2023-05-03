@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Box, Typography, Button } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -25,7 +26,9 @@ const Home = () => {
       }}>
         <Typography variant="h2" color="initial" fontWeight='600'>MK</Typography>
       </Box>
-      <Button sx={{ width: '250px', mt: 4,p:'1.2rem' }}>Create Your Resume</Button>
+      <Link to='/resume'>
+        <Button sx={{ width: '250px', mt: 4, p: '1.2rem' }}>Create Your Resume</Button>
+      </Link>
     </Box>
   )
 }
