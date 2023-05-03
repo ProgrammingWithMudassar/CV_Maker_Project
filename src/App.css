@@ -1,13 +1,21 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+*{
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
   border: none;
   outline: none;
   text-decoration: none;
-  text-transform: capitalize;
   transition: all 0.2s linear;
+  scroll-behavior: smooth;
 }
+
+:root{
+  --BoxBackground--color: #06154B;
+}
+
 
 .App {
   font-size: 100%;
