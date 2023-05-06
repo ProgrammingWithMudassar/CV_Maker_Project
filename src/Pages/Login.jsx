@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom'
-
+import CancelIcon from '@mui/icons-material/Cancel';
 
 
 
@@ -22,9 +22,19 @@ const Login = () => {
         p: 4,
     };
 
+    const IconStyle = {
+        position: 'absolute',
+        top: '1rem', right: "1rem",
+        fontSize: '2rem',
+        color:'#000'
+    }
+
     return (
         <div>
             <Box sx={style}>
+                <Link to='/'>
+                    <CancelIcon sx={IconStyle} />
+                </Link>
                 <Typography variant="h4" component="h2" fontWeight='600' textAlign='center' > Log In </Typography>
                 <Box>
                     <Stack direction="column" mt={4} textAlign="left">
@@ -32,14 +42,14 @@ const Login = () => {
                         <input type="email" placeholder='Email' className='input' /><br />
                         <label for="" style={{ fontWeight: "600" }}>Password</label>
                         <input type="password" placeholder='password' className='input' /><br />
-                        <Typography variant="body1" color="initial" sx={{ cursor: "pointer",textDecoration:'underline' }}>Forget password?</Typography>
+                        <Typography variant="body1" color="initial" sx={{ cursor: "pointer", textDecoration: 'underline' }}>Forget password?</Typography>
                     </Stack>
                 </Box>
                 <Button sx={{ width: '100%', mt: 2, fontWeight: '600', p: 2.3 }}>LogIn</Button>
                 <Typography variant="body1" color="initial" mt={2}>
                     Create new account
                     <Link to='/signUp'>
-                        <span style={{ cursor: 'pointer', fontWeight: "600", textDecoration:'underline' }} > SignUp </span>
+                        <span style={{ cursor: 'pointer', fontWeight: "600", textDecoration: 'underline' }} > SignUp </span>
                     </Link>
                 </Typography>
             </Box>
