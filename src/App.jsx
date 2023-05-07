@@ -4,6 +4,9 @@ import { Navbar } from './Components/index'
 import { Home, Templates, Login, SignUp, EditTemplate } from './Pages/index'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import PrivateRoute from './Utils/PrivateRoute'
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function App() {
   const [count, setCount] = useState(0)
