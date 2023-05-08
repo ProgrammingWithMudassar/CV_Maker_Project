@@ -7,7 +7,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import CancelIcon from '@mui/icons-material/Cancel';
 import { ToastContainer, toast } from 'react-toastify';
 
-
 const SignUp = () => {
 
   const style = {
@@ -44,7 +43,6 @@ const SignUp = () => {
     const Cpassword = CpasswordRef.current.value;
 
     if (email && password && name && Cpassword) {
-      toast.success('Register Successfully');
       navigate('/login');
     } else {
       toast.error('Please fill all fields');
