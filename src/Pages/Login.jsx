@@ -38,7 +38,6 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         if (email && passwordRef) {
-            toast.success('Login Successfully');
             console.log({ password, email });
         } else {
             toast.error('Please fill all fields');
