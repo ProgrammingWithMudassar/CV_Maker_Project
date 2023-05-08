@@ -43,6 +43,7 @@ const SignUp = () => {
     const Cpassword = CpasswordRef.current.value;
 
     if (email && password && name && Cpassword) {
+      toast.success('Register Successfully');
       navigate('/login');
     } else {
       toast.error('Please fill all fields');
