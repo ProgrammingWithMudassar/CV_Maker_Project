@@ -9,12 +9,9 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
-
-
     return (
         <div>
-            <Container>
-                <Box mt={{ xs: 1, md: 2 }} className="navbar">
+                <Box className="navbar">
                     <Link to='/'>
                         <Typography variant="h6" color="#fff" fontWeight={600}>CV_Maker.</Typography>
                     </Link>
@@ -24,7 +21,6 @@ const Navbar = () => {
                         </Button>
                     </Link>
                 </Box>
-            </Container>
         </div>
     )
 }
