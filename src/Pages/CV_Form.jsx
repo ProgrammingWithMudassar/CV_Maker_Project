@@ -11,7 +11,7 @@ const EditTemplate = () => {
             <Typography variant="h6" color="initial" fontWeight={600}>Build Your Resume</Typography>
             <Container >
                 <div>
-                    
+                    {/* This field only show to the Business  */}
                     {paramName.id === 'business' && (
                         <>
                             <input type="text" placeholder="Business input 1" />
