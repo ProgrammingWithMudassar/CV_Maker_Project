@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Container, Divider } from "@mui/material";
 import { ResumeData } from "../Data/DummyData.js";
 import "./Style.css";
+import { Link } from 'react-router-dom'
 
 const Templates = () => {
     const [activeCategory, setActiveCategory] = useState("All");
@@ -132,12 +133,14 @@ const Templates = () => {
                 >
                     {filteredData.map((obj) => {
                         return (
-                            <img
-                                key={obj.category}
-                                src={obj.img}
-                                alt=""
-                                className="TemaplateImg"
-                            />
+                            <Link to='/cv_form'>
+                                <img
+                                    key={obj.category}
+                                    src={obj.img}
+                                    alt=""
+                                    className="TemaplateImg"
+                                />
+                            </Link>
                         );
                     })}
                 </Box>

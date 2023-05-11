@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Navbar } from './Components/index'
-import { Home, Templates, Login, SignUp, EditTemplate } from './Pages/index'
+import { Home, Templates, Login, SignUp, CV_Form } from './Pages/index'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import PrivateRoute from './Utils/PrivateRoute'
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,7 +24,7 @@ function App() {
           {/* PrivateRoute   */}
           <Route path='/' element={<PrivateRoute />} >
             <Route exact path='/resume' element={<Templates />} />
-            <Route path='/editTemplate' element={<EditTemplate />} />
+            <Route path='/cv_form' element={<CV_Form />} />
           </Route>
         </Routes>
       </Router>
