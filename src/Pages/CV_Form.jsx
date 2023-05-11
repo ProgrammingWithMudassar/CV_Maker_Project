@@ -1,26 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Container, Typography, Button, Grid, Card, ListItem, List } from '@mui/material'
+import { Box, Container, Typography, Button, Grid, Card, ListItem, List, Divider } from '@mui/material'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import ReplyIcon from '@mui/icons-material/Reply';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import './Style.css'
 
 const EditTemplate = () => {
 
     const paramName = useParams();
     const [category, setCategory] = useState('')
-    const [letterCount, setLetterCount] = useState(0);
 
     useEffect(() => {
         setCategory(paramName.id);
     }, [])
 
-
-    const handleInputChange = (event) => {
-        const inputValue = event.target.value;
-        const count = inputValue.length;
-        setLetterCount(count);
-    };
 
     return (
         <Box my={4}>
@@ -30,14 +24,19 @@ const EditTemplate = () => {
                 </Link>
             </Box>
             <Container >
-                <Typography variant="h6" color="initial" fontWeight={600}>Build Your Resume</Typography>
+                <Typography variant="h5" color="initial" fontWeight={600}>Build Your Resume</Typography>
                 <Grid container spacing={4} sx={{ textAlign: 'left', pt: 4 }}>
                     {/* First Grid  */}
                     <Grid item xs={12} sm={6} md={4} >
                         <Box >
 
                             {/* Name  & Position*/}
-                            <Box>
+                            <Box className="file-upload-container">
+                                <input type="file" id="file-upload" className='input_file' />
+                                <label htmlFor="file-upload" className="custom-file-upload"> <CameraAltIcon sx={{ opacity: '0.5' }} /> </label>
+                                <Typography variant="h6" color="initial" fontWeight={600}>Upload Profile Image</Typography>
+                            </Box>
+                            <Box mt={2}>
                                 <Box>
                                     <label for="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
                                     <input type="text" id="name" placeholder='Name' className='form_input' /><br />
@@ -72,7 +71,6 @@ const EditTemplate = () => {
 
                             </Box>
 
-                            {/* Your Skills  */}
                             <Box mt={2}>
                                 <Box display="flex" justifyContent='center'>
                                     <Typography variant="h6" color="initial" fontWeight={600} >Your Skills </Typography>
@@ -106,24 +104,172 @@ const EditTemplate = () => {
                                     </List>
                                 </Card>
                             </Box>
+
+
                         </Box>
                     </Grid>
 
                     {/* Second Grid  */}
                     <Grid item xs={12} sm={6} md={4} >
-                        <label for="about" style={{ fontWeight: "600" }}>About Me</label>
+                        <label for="about" style={{ fontWeight: "600" }}>About Me <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
                         <textarea
                             type="about"
                             id="about"
                             placeholder='Describe yourself in 250 letters'
                             className='textarea_input'
                             rows="10" cols="50"
-                            onChange={handleInputChange}
                             maxLength={250}
                         /><br />
-                        <p>Number of words: {letterCount}</p>
 
-                        {/* Langages  */}
+                        {/* Education  */}
+                        <Box mt={1}>
+                            <Typography variant="h6" color="initial" fontWeight={600} textAlign='center' >Education </Typography>
+
+                            <Card >
+                                <Grid container spacing={0} sx={{ pt: 1 }}>
+                                    <Grid item xs={12} >
+                                        <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>First Degree <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={12} >
+                                        <ListItem> <input type="text" className='form_input' placeholder='Degree Name' /></ListItem>
+                                        <ListItem>
+                                            <textarea
+                                                type="about"
+                                                id="about"
+                                                placeholder='Describe yourself in 150 letters'
+                                                className='textarea_input'
+                                                rows="6" cols="50"
+                                                maxLength={150}
+                                            /></ListItem>
+                                    </Grid>
+
+
+                                    <Grid item xs={12} >
+                                        <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Second Degree <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={12} >
+                                        <ListItem> <input type="text" className='form_input' placeholder='Degree Name' /></ListItem>
+                                        <ListItem>
+                                            <textarea
+                                                type="about"
+                                                id="about"
+                                                placeholder='Describe yourself in 150 letters'
+                                                className='textarea_input'
+                                                rows="6" cols="50"
+                                                maxLength={150}
+                                            /></ListItem>
+                                    </Grid>
+                                </Grid>
+                            </Card>
+                        </Box>
+                        {/* Hobbies  */}
+                        <Box mt={2}>
+                            <Box display="flex" justifyContent='center'>
+                                <Typography variant="h6" color="initial" fontWeight={600} >Hobbies  </Typography>
+                                <Typography variant="body2" color="initial" mt={0.9}>(min. add 3 hobbies) </Typography>
+                            </Box>
+                            <Grid container spacing={2}>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                            </Grid>
+                        </Box>
+
+
+                    </Grid>
+
+                    {/* Third Grid  */}
+                    <Grid item xs={12} sm={6} md={4} >
+
+                        {/* Experience  */}
+                        <Box >
+                            <Typography variant="h6" color="initial" fontWeight={600} textAlign='center' >Experience </Typography>
+
+                            <Card >
+                                <Grid container spacing={0} sx={{ pt: 1 }}>
+                                    <Grid item xs={12} >
+                                        <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>First Experience <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' maxLength={4} /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={12} >
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' /></ListItem>
+                                        <ListItem>
+                                            <textarea
+                                                type="about"
+                                                id="about"
+                                                placeholder='Describe into 150 letters'
+                                                className='textarea_input'
+                                                rows="6" cols="50"
+                                                maxLength={150}
+                                            /></ListItem>
+                                    </Grid>
+
+
+                                    <Grid item xs={12} >
+                                        <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Second Experience <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={12} >
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' /></ListItem>
+                                        <ListItem>
+                                            <textarea
+                                                type="about"
+                                                id="about"
+                                                placeholder='Describe into 150 letters'
+                                                className='textarea_input'
+                                                rows="6" cols="50"
+                                                maxLength={150}
+                                            /></ListItem>
+                                    </Grid>
+
+                                    <Grid item xs={12} >
+                                        <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Third Experience</Typography>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={6} >
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                    </Grid>
+                                    <Grid item xs={12} >
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' /></ListItem>
+                                        <ListItem>
+                                            <textarea
+                                                type="about"
+                                                id="about"
+                                                placeholder='Describe into 150 letters'
+                                                className='textarea_input'
+                                                rows="6" cols="50"
+                                                maxLength={150}
+                                            /></ListItem>
+                                    </Grid>
+                                </Grid>
+                            </Card>
+                        </Box>
+                        {/* Language  */}
                         <Box mt={2}>
                             <Typography variant="h6" color="initial" fontWeight={600} textAlign='center'>Languages </Typography>
                             <Card >
@@ -149,26 +295,18 @@ const EditTemplate = () => {
                                 </List>
                             </Card>
                         </Box>
-                        {/* Hobbies  */}
-                        <Box mt={2}>
-                            <Box display="flex" justifyContent='center'>
-                                <Typography variant="h6" color="initial" fontWeight={600} >Hobbies  </Typography>
-                                <Typography variant="body2" color="initial" mt={0.9}>(min. add 3 hobbies) </Typography>
-                            </Box>
-                            <Grid container spacing={2}>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                            </Grid>
-                        </Box>
-                    </Grid>
 
-                    {/* Third Grid  */}
-                    <Grid item xs={12} sm={6} md={4} >
-                        Third
+
                     </Grid>
                 </Grid>
+
+                <Box sx={{ mt: { xs: 2, md: 4 } }}>
+                    <Divider
+                        variant="fullWidth"
+                        orientation="horizontal"
+                    />
+                    <Typography variant="body1" color="initial" textAlign='center' mt={2}>@2023</Typography>
+                </Box>
             </Container>
         </Box>
     )
