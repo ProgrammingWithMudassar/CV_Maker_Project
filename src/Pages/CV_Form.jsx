@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Container, Typography, Button, Grid, Stack } from '@mui/material'
+import { Box, Container, Typography, Button, Grid, Card, ListItem, List } from '@mui/material'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import ReplyIcon from '@mui/icons-material/Reply';
@@ -38,10 +38,14 @@ const EditTemplate = () => {
                                 <label for="name" style={{ fontWeight: "600", }}>Name</label>
                                 <input type="text" id="name" placeholder='Name' className='form_input' /><br />
                             </Box>
+
+                            {/* Name  */}
                             <Box mt={1}>
                                 <label for="position" style={{ fontWeight: "600", }}>Job Position </label>
                                 <input type="text" id="position" placeholder='Job Position' className='form_input' /><br />
                             </Box>
+
+                            {/* Contact Information */}
                             <Box mt={2}>
                                 <Typography variant="h6" color="initial" fontWeight={600} textAlign="center">Contact Information</Typography>
 
@@ -64,26 +68,36 @@ const EditTemplate = () => {
 
                             </Box>
 
+                            {/* Your Skills  */}
                             <Box mt={2}>
                                 <Typography variant="h6" color="initial" fontWeight={600} textAlign="center">Your Skills</Typography>
 
-                                <Box>
-                                    <label for="number" style={{ fontWeight: "600", }}>Number</label>
-                                    <input type="number" id="number" placeholder='Contact Number' className='form_input' /><br />
-                                </Box>
-                                <Box mt={1}>
-                                    <label for="email" style={{ fontWeight: "600", }}>Email</label>
-                                    <input type="email" id="email" placeholder='Email' className='form_input' /><br />
-                                </Box>
-                                <Box mt={1}>
-                                    <label for="address" style={{ fontWeight: "600", }}>Address</label>
-                                    <input type="address" id="address" placeholder='Address' className='form_input' /><br />
-                                </Box>
-                                <Box mt={1}>
-                                    <label for="website" style={{ fontWeight: "600", }}>Website Link</label>
-                                    <input type="website" id="website" placeholder='Website Link' className='form_input' /><br />
-                                </Box>
-
+                                <Card >
+                                    <List>
+                                        <Grid container spacing={0}>
+                                            <Grid xs={8}>
+                                                <ListItem><Typography variant="body1" color="initial" fontWeight={600}>Skill</Typography> </ListItem>
+                                            </Grid>
+                                            <Grid xs={4}>
+                                                <ListItem><Typography variant="body1" color="initial" textAlign='left' fontWeight={600}>Experties</Typography> </ListItem>
+                                            </Grid>
+                                            <Grid xs={8} >
+                                                <ListItem><input type="text" placeholder='1st skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" placeholder='2nd skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" placeholder='3rd skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" placeholder='4th skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" placeholder='5th skill' className='form_input' /></ListItem>
+                                            </Grid>
+                                            <Grid xs={4} >
+                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                            </Grid>
+                                        </Grid>
+                                    </List>
+                                </Card>
                             </Box>
                         </Box>
                     </Grid>
