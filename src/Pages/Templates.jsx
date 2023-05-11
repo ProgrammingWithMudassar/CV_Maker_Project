@@ -131,9 +131,9 @@ const Templates = () => {
                         gap: { xs: 2, md: 4 },
                     }}
                 >
-                    {filteredData.map((obj) => {
+                    {filteredData.map((obj,id) => {
                         return (
-                            <Link to='/cv_form'>
+                            <Link to={`/resume/${obj.id_category}`} >
                                 <img
                                     key={obj.category}
                                     src={obj.img}

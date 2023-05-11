@@ -8,18 +8,22 @@ import B_CV from '../Assets/png/B_CV.png'
 
 export const ResumeData = [
     {
+        id_category :'IT',
         category :'IT',
         img : CV
     },
     {
+        id_category :'health',
         category :'Health',
         img : H_CV
     },
     {
+        id_category :'managment',
         category :'Managment',
         img : M_CV
     },
     {
+        id_category :'business',
         category :'Business',
         img : B_CV
     }
