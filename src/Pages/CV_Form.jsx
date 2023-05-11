@@ -32,17 +32,21 @@ const EditTemplate = () => {
             <Container >
                 <Typography variant="h6" color="initial" fontWeight={600}>Build Your Resume</Typography>
                 <Grid container spacing={4} sx={{ textAlign: 'left', pt: 4 }}>
+                    {/* First Grid  */}
                     <Grid item xs={12} sm={6} md={4} >
                         <Box >
-                            <Box>
-                                <label for="name" style={{ fontWeight: "600", }}>Name</label>
-                                <input type="text" id="name" placeholder='Name' className='form_input' /><br />
-                            </Box>
 
-                            {/* Name  */}
-                            <Box mt={1}>
-                                <label for="position" style={{ fontWeight: "600", }}>Job Position </label>
-                                <input type="text" id="position" placeholder='Job Position' className='form_input' /><br />
+                            {/* Name  & Position*/}
+                            <Box>
+                                <Box>
+                                    <label for="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
+                                    <input type="text" id="name" placeholder='Name' className='form_input' /><br />
+                                </Box>
+
+                                <Box mt={1}>
+                                    <label for="position" style={{ fontWeight: "600", }}>Job Position <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span> </label>
+                                    <input type="text" id="position" placeholder='Job Position' className='form_input' /><br />
+                                </Box>
                             </Box>
 
                             {/* Contact Information */}
@@ -50,15 +54,15 @@ const EditTemplate = () => {
                                 <Typography variant="h6" color="initial" fontWeight={600} textAlign="center">Contact Information</Typography>
 
                                 <Box>
-                                    <label for="number" style={{ fontWeight: "600", }}>Number</label>
+                                    <label for="number" style={{ fontWeight: "600", }}>Number <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
                                     <input type="number" id="number" placeholder='Contact Number' className='form_input' /><br />
                                 </Box>
                                 <Box mt={1}>
-                                    <label for="email" style={{ fontWeight: "600", }}>Email</label>
+                                    <label for="email" style={{ fontWeight: "600", }}>Email <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
                                     <input type="email" id="email" placeholder='Email' className='form_input' /><br />
                                 </Box>
                                 <Box mt={1}>
-                                    <label for="address" style={{ fontWeight: "600", }}>Address</label>
+                                    <label for="address" style={{ fontWeight: "600", }}>Address <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
                                     <input type="address" id="address" placeholder='Address' className='form_input' /><br />
                                 </Box>
                                 <Box mt={1}>
@@ -70,7 +74,10 @@ const EditTemplate = () => {
 
                             {/* Your Skills  */}
                             <Box mt={2}>
-                                <Typography variant="h6" color="initial" fontWeight={600} textAlign="center">Your Skills</Typography>
+                                <Box display="flex" justifyContent='center'>
+                                    <Typography variant="h6" color="initial" fontWeight={600} >Your Skills </Typography>
+                                    <Typography variant="body2" color="initial" mt={0.9}>(min. add 3 skills) </Typography>
+                                </Box>
 
                                 <Card >
                                     <List>
@@ -101,6 +108,8 @@ const EditTemplate = () => {
                             </Box>
                         </Box>
                     </Grid>
+
+                    {/* Second Grid  */}
                     <Grid item xs={12} sm={6} md={4} >
                         <label for="about" style={{ fontWeight: "600" }}>About Me</label>
                         <textarea
@@ -113,7 +122,49 @@ const EditTemplate = () => {
                             maxLength={250}
                         /><br />
                         <p>Number of words: {letterCount}</p>
+
+                        {/* Langages  */}
+                        <Box mt={2}>
+                            <Typography variant="h6" color="initial" fontWeight={600} textAlign='center'>Languages </Typography>
+                            <Card >
+                                <List>
+                                    <Grid container spacing={0}>
+                                        <Grid xs={8}>
+                                            <ListItem><Typography variant="body1" color="initial" fontWeight={600}>language</Typography> </ListItem>
+                                        </Grid>
+                                        <Grid xs={4}>
+                                            <ListItem><Typography variant="body1" color="initial" textAlign='left' fontWeight={600}>Experties</Typography> </ListItem>
+                                        </Grid>
+                                        <Grid xs={8} >
+                                            <ListItem><input type="text" placeholder='1st language' className='form_input' /></ListItem>
+                                            <ListItem><input type="text" placeholder='2nd language' className='form_input' /></ListItem>
+                                            <ListItem><input type="text" placeholder='3rd language' className='form_input' /></ListItem>
+                                        </Grid>
+                                        <Grid xs={4} >
+                                            <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                            <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                            <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                        </Grid>
+                                    </Grid>
+                                </List>
+                            </Card>
+                        </Box>
+                        {/* Hobbies  */}
+                        <Box mt={2}>
+                            <Box display="flex" justifyContent='center'>
+                                <Typography variant="h6" color="initial" fontWeight={600} >Hobbies  </Typography>
+                                <Typography variant="body2" color="initial" mt={0.9}>(min. add 3 hobbies) </Typography>
+                            </Box>
+                            <Grid container spacing={2}>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
+                            </Grid>
+                        </Box>
                     </Grid>
+
+                    {/* Third Grid  */}
                     <Grid item xs={12} sm={6} md={4} >
                         Third
                     </Grid>
