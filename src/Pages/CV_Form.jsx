@@ -300,6 +300,10 @@ const EditTemplate = () => {
                     </Grid>
                 </Grid>
 
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 4 }}>
+                    <Button>Submit</Button>
+                    <Button>Clear All</Button>
+                </Box>
                 <Box sx={{ mt: { xs: 2, md: 4 } }}>
                     <Divider
                         variant="fullWidth"
@@ -307,6 +311,7 @@ const EditTemplate = () => {
                     />
                     <Typography variant="body1" color="initial" textAlign='center' mt={2}>@2023</Typography>
                 </Box>
+
             </Container>
         </Box>
     )
