@@ -302,7 +302,16 @@ const EditTemplate = () => {
 
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 4 }}>
                     <Button>Submit</Button>
-                    <Button>Clear All</Button>
+                    <Button
+                        sx={{
+                            background: 'linear-gradient(45deg, #B02E0C 30%, #EB4511 90%)',
+                            color:"#fff",
+                            '&:hover': {
+                                backgroundColor: 'red',
+                            },
+                        }}
+                        onClick={() => window.location.reload()}
+                        >Clear All</Button>
                 </Box>
                 <Box sx={{ mt: { xs: 2, md: 4 } }}>
                     <Divider
