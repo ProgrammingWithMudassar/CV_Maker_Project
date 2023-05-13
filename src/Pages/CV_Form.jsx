@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Container, Typography, Button, Grid, Card, ListItem, List, Divider } from '@mui/material'
-import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import ReplyIcon from '@mui/icons-material/Reply';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
@@ -8,12 +7,40 @@ import './Style.css'
 
 const EditTemplate = () => {
 
-    const paramName = useParams();
-    const [category, setCategory] = useState('')
+    const [data, setData] = useState({
+        Name: '', Job_Position: '',
+        Number: '', Email: '', Address: '', Web_Link: '',
+        About: '',
+        Hobbies: ['', '', '', ''],
+        Skills: [
+            { skil: '', expertise: '' },
+            { skil: '', expertise: '' },
+            { skil: '', expertise: '' },
+            { skil: '', expertise: '' },
+            { skil: '', expertise: '' },
+        ],
 
-    useEffect(() => {
-        setCategory(paramName.id);
-    }, [])
+        Languages: [
+            { lan: '', expertise: '' },
+            { lan: '', expertise: '' },
+            { lan: '', expertise: '' },
+            { lan: '', expertise: '' },
+            { lan: '', expertise: '' },
+        ],
+
+        Education: [
+            { edu_start_year: '', edu_end_year: '',Degree: '', Details:''  },
+            { edu_start_year: '', edu_end_year: '',Degree: '', Details:''  },
+        ],
+
+        Experience:[
+            { Exp_start_year: '', Exp_end_year: '', Company: '', Details:''  },
+            { Exp_start_year: '', Exp_end_year: '', Company: '', Details:''  },
+        ]
+
+
+    });
+
 
 
     return (
@@ -244,7 +271,7 @@ const EditTemplate = () => {
                                                 maxLength={150}
                                             /></ListItem>
                                     </Grid>
-                                    
+
                                     <Grid item xs={12} >
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Third Experience</Typography>
                                     </Grid>
@@ -303,13 +330,13 @@ const EditTemplate = () => {
                     <Button
                         sx={{
                             background: 'linear-gradient(45deg, #B02E0C 30%, #EB4511 90%)',
-                            color:"#fff",
+                            color: "#fff",
                             '&:hover': {
                                 backgroundColor: 'red',
                             },
                         }}
                         onClick={() => window.location.reload()}
-                        >Clear All</Button>
+                    >Clear All</Button>
                 </Box>
                 <Box sx={{ mt: { xs: 2, md: 4 } }}>
                     <Divider
