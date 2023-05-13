@@ -244,7 +244,7 @@ const EditTemplate = () => {
                                                 maxLength={150}
                                             /></ListItem>
                                     </Grid>
-
+                                    
                                     <Grid item xs={12} >
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Third Experience</Typography>
                                     </Grid>
@@ -295,8 +295,6 @@ const EditTemplate = () => {
                                 </List>
                             </Card>
                         </Box>
-
-
                     </Grid>
                 </Grid>
 
