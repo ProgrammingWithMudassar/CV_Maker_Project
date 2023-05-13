@@ -5,13 +5,16 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./Theme/theme.js";
 import { Provider } from "react-redux";
-import { configureStore } from '@reduxjs/toolkit'
-import counterSlice from './Features/Counter/CounterSlice.js'
 
+//Store
+import store from './Features/Store/Store.js'
 
-const store = configureStore({
-  reducer: { counter: counterSlice }
-});
+// Persist 
+import persistStore from "redux-persist/es/persistStore";
+import { PersistGate } from 'redux-persist/integration/react';
+
+const persistor = persistStore(store);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,7 +23,9 @@ root.render(
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <Provider store={store}>
-          <App />
+          <PersistGate persistor={persistor}>
+            <App />
+          </PersistGate>
         </Provider>
       </CssBaseline>
     </ThemeProvider>
