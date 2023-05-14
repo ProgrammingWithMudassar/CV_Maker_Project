@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Container, Typography, Button, Grid, Card, ListItem, List, Divider } from '@mui/material'
-import { Link } from 'react-router-dom'
 import ReplyIcon from '@mui/icons-material/Reply';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import './Style.css'
 import { ToastContainer, toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux'
 import { UpdateState } from '../Features/Counter/CounterSlice'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const EditTemplate = () => {
@@ -29,6 +29,8 @@ const EditTemplate = () => {
 
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
     const handleInput = (e) => {
 
@@ -47,11 +49,11 @@ const EditTemplate = () => {
 
         if (
             Name && Job_position
- 
+
         ) {
             dispatch(UpdateState(FormData))
             toast.success('Register Successfully');
-            navigate('/login');
+            navigate('/resume/cv1');
         } else {
             toast.error('Please fill all fields');
         }
