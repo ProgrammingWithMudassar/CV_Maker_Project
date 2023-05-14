@@ -79,8 +79,7 @@ const SignUp = () => {
           </Typography>
         </form>
       </Box>
-      <ToastContainer />
-    </div>
+      </div>
   )
 }
 

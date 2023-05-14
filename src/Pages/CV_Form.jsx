@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom'
 import ReplyIcon from '@mui/icons-material/Reply';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import './Style.css'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const EditTemplate = () => {
 
     const [FormData, setFormData] = useState({
-        // Name: '', Job_Position: '',
+        // Name, Job_Position: '',
         // Number: '', Email: '', Address: '', Web_Link: '',
         // About: '',
         // Hob1: '', Hob2: '', Hob3: '', Hob4: '',
@@ -18,17 +20,44 @@ const EditTemplate = () => {
         // Language1_Exp: '', Language2_Exp: '', Language3_Exp: '', Language4_Exp: '', Language5_Exp: '',
         // Edu1_start_year: '', Edu1_end_year: '', Edu1_degree: '', Edu1_details: '',
         // Edu2_start_year: '', Edu2_end_year: '', Edu2_degree: '', Edu2_details: '',
-        // Exp1_start_year: '', Exp1_end_year: '', Exp1_degree: '', Exp1_details: '',
-        // Exp2_start_year: '', Exp2_end_year: '', Exp2_degree: '', Exp2_details: '',
+        // Exp1_start_year: '', Exp1_end_year: '', Exp1_compnay_name: '', Exp1_details: '',
+        // Exp2_start_year: '', Exp2_end_year: '', Exp2_compnay_name: '', Exp2_details: '',
+        // Exp3_start_year: '', Exp3_end_year: '', Exp3_compnay_name: '', Exp3_details: '',
     });
 
 
     let name, value;
     const handleInput = (e) => {
-        // name = e.target.name;
-        // value = e.target.value;
-        // setFormData({ ...FormData, [name]: value })
-        console.log(FormData)
+
+        let {
+            Name, Job_position, Number, Email, Address, About, Hob1, Hob2,
+            skill1, skill2, skill3,
+            skill_exp1, skill_exp2, skill_exp3,
+            Language1, Language2, Language3,
+            Language1_Exp, Language2_Exp, Language3_Exp,
+            Edu1_start_year, Edu1_end_year, Edu1_degree, Edu1_details,
+            Edu2_start_year, Edu2_end_year, Edu2_degree, Edu2_details,
+            Exp1_start_year, Exp1_end_year, Exp1_compnay_name, Exp1_details,
+            Exp2_start_year, Exp2_end_year, Exp2_compnay_name, Exp2_details,
+        } = FormData;
+
+
+        if (
+            Name && Job_position && Number && Email && Address && About && Hob1 && Hob2 &&
+            skill1 && skill2 && skill3 &&
+            skill_exp1 && skill_exp2 && skill_exp3 &&
+            Language1 && Language2 && Language3 &&
+            Language1_Exp && Language2_Exp && Language3_Exp &&
+            Edu1_start_year && Edu1_end_year && Edu1_degree && Edu1_details &&
+            Edu2_start_year && Edu2_end_year && Edu2_degree && Edu2_details &&
+            Exp1_start_year && Exp1_end_year && Exp1_compnay_name && Exp1_details &&
+            Exp2_start_year && Exp2_end_year && Exp2_compnay_name && Exp2_details
+        ) {
+            toast.success('Register Successfully');
+            navigate('/login');
+        } else {
+            toast.error('Please fill all fields');
+        }
     }
 
     return (
@@ -105,7 +134,7 @@ const EditTemplate = () => {
                                                 <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill2: e.target.value })} placeholder='2nd skill' className='form_input' /></ListItem>
                                                 <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill3: e.target.value })} placeholder='3rd skill' className='form_input' /></ListItem>
                                                 <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill4: e.target.value })} placeholder='4th skill' className='form_input' /></ListItem>
-                                                <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill4: e.target.value })} placeholder='5th skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill5: e.target.value })} placeholder='5th skill' className='form_input' /></ListItem>
                                             </Grid>
                                             <Grid xs={4} >
                                                 <ListItem><input type="number" placeholder='%' onChange={(e) => setFormData({ ...FormData, skill_exp1: e.target.value })} className='form_input' /></ListItem>
@@ -185,7 +214,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
-                                                onChange={(e) => setFormData({ ...FormData, Edu2_details: e.target.value })} 
+                                                onChange={(e) => setFormData({ ...FormData, Edu2_details: e.target.value })}
                                             /></ListItem>
                                     </Grid>
                                 </Grid>
@@ -198,11 +227,11 @@ const EditTemplate = () => {
                                 <Typography variant="body2" color="initial" mt={0.9}>(min. add 3 hobbies) </Typography>
                             </Box>
                             <Grid container spacing={2}>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob1: e.target.value })} /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob2: e.target.value })} /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob3: e.target.value })} /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob4: e.target.value })} /><br /> </Grid>
-                                </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Hob1: e.target.value })} /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Hob2: e.target.value })} /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Hob3: e.target.value })} /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Hob4: e.target.value })} /><br /> </Grid>
+                            </Grid>
 
                         </Box>
 
@@ -236,7 +265,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
-                                                onChange={(e) => setFormData({ ...FormData, Exp1_details: e.target.value })} 
+                                                onChange={(e) => setFormData({ ...FormData, Exp1_details: e.target.value })}
                                             /></ListItem>
                                     </Grid>
 
@@ -245,13 +274,13 @@ const EditTemplate = () => {
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Second Experience <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='Start' onChange={(e) => setFormData({ ...FormData, Exp2_start_year: e.target.value })}/></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' onChange={(e) => setFormData({ ...FormData, Exp2_start_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='End' onChange={(e) => setFormData({ ...FormData, Exp2_end_year: e.target.value })}/></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' onChange={(e) => setFormData({ ...FormData, Exp2_end_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={12} >
-                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' onChange={(e) => setFormData({ ...FormData, Exp2_compnay_name: e.target.value })}/></ListItem>
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' onChange={(e) => setFormData({ ...FormData, Exp2_compnay_name: e.target.value })} /></ListItem>
                                         <ListItem>
                                             <textarea
                                                 type="about"
@@ -260,7 +289,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
-                                                onChange={(e) => setFormData({ ...FormData, Exp2_details: e.target.value })} 
+                                                onChange={(e) => setFormData({ ...FormData, Exp2_details: e.target.value })}
                                             /></ListItem>
                                     </Grid>
 
@@ -268,13 +297,13 @@ const EditTemplate = () => {
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Third Experience</Typography>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='Start' onChange={(e) => setFormData({ ...FormData, Exp3_start_year: e.target.value })}/></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' onChange={(e) => setFormData({ ...FormData, Exp3_start_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='End' onChange={(e) => setFormData({ ...FormData, Exp3_end_year: e.target.value })}/></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' onChange={(e) => setFormData({ ...FormData, Exp3_end_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={12} >
-                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' onChange={(e) => setFormData({ ...FormData, Exp3_compnay_name: e.target.value })}/></ListItem>
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' onChange={(e) => setFormData({ ...FormData, Exp3_compnay_name: e.target.value })} /></ListItem>
                                         <ListItem>
                                             <textarea
                                                 type="about"
@@ -283,7 +312,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
-                                                onChange={(e) => setFormData({ ...FormData, Exp3_details: e.target.value })} 
+                                                onChange={(e) => setFormData({ ...FormData, Exp3_details: e.target.value })}
                                             /></ListItem>
                                     </Grid>
                                 </Grid>
@@ -302,14 +331,14 @@ const EditTemplate = () => {
                                             <ListItem><Typography variant="body1" color="initial" textAlign='left' fontWeight={600}>Experties</Typography> </ListItem>
                                         </Grid>
                                         <Grid xs={8} >
-                                            <ListItem><input type="text" placeholder='1st language' className='form_input' /></ListItem>
-                                            <ListItem><input type="text" placeholder='2nd language' className='form_input' /></ListItem>
-                                            <ListItem><input type="text" placeholder='3rd language' className='form_input' /></ListItem>
+                                            <ListItem><input type="text" placeholder='1st language' className='form_input' onChange={(e) => setFormData({ ...FormData, Language1: e.target.value })} /></ListItem>
+                                            <ListItem><input type="text" placeholder='2nd language' className='form_input' onChange={(e) => setFormData({ ...FormData, Language2: e.target.value })} /></ListItem>
+                                            <ListItem><input type="text" placeholder='3rd language' className='form_input' onChange={(e) => setFormData({ ...FormData, Language3: e.target.value })} /></ListItem>
                                         </Grid>
                                         <Grid xs={4} >
-                                            <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
-                                            <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
-                                            <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                            <ListItem><input type="number" placeholder='%' className='form_input' onChange={(e) => setFormData({ ...FormData, Language1_Exp: e.target.value })} /></ListItem>
+                                            <ListItem><input type="number" placeholder='%' className='form_input' onChange={(e) => setFormData({ ...FormData, Language2_Exp: e.target.value })} /></ListItem>
+                                            <ListItem><input type="number" placeholder='%' className='form_input' onChange={(e) => setFormData({ ...FormData, Language3_Exp: e.target.value })} /></ListItem>
                                         </Grid>
                                     </Grid>
                                 </List>
@@ -338,8 +367,8 @@ const EditTemplate = () => {
                     />
                     <Typography variant="body1" color="initial" textAlign='center' mt={2}>@2023</Typography>
                 </Box>
-
             </Container>
+            <ToastContainer />
         </Box>
     )
 }
