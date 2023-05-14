@@ -4,32 +4,22 @@ const initialState = {
   Name: '', Job_Position: '',
   Number: '', Email: '', Address: '', Web_Link: '',
   About: '',
-  Hobbies: ['', '', '', ''],
-  Skills: [
-    { skil: '', expertise: '' },
-    { skil: '', expertise: '' },
-    { skil: '', expertise: '' },
-    { skil: '', expertise: '' },
-    { skil: '', expertise: '' },
-  ],
 
-  Languages: [
-    { lan: '', expertise: '' },
-    { lan: '', expertise: '' },
-    { lan: '', expertise: '' },
-    { lan: '', expertise: '' },
-    { lan: '', expertise: '' },
-  ],
+  Hob1: '', Hob2: '', Hob3: '', Hob4: '',
 
-  Education: [
-    { edu_start_year: '', edu_end_year: '', Degree: '', Details: '' },
-    { edu_start_year: '', edu_end_year: '', Degree: '', Details: '' },
-  ],
+  skill1: '', skill2: '', skill3: '', skill4: '',
+  skill_exp1: '', skill_exp2: '', skill_exp3: '', skill_exp4: '',
 
-  Experience: [
-    { Exp_start_year: '', Exp_end_year: '', Company: '', Details: '' },
-    { Exp_start_year: '', Exp_end_year: '', Company: '', Details: '' },
-  ]
+  Language1: '', Language2: '', Language3: '', Language4: '', Language5: '',
+  Language1_Exp: '', Language2_Exp: '', Language3_Exp: '', Language4_Exp: '', Language5_Exp: '',
+
+  Edu1_start_year: '', Edu1_end_year: '', Edu1_degree: '', Edu1_details: '',
+  Edu2_start_year: '', Edu2_end_year: '', Edu2_degree: '', Edu2_details: '',
+
+
+  Exp1_start_year: '', Exp1_end_year: '', Exp1_degree: '', Exp1_details: '',
+  Exp2_start_year: '', Exp2_end_year: '', Exp2_degree: '', Exp2_details: '',
+
 }
 
 export const counterSlice = createSlice({

@@ -7,41 +7,38 @@ import './Style.css'
 
 const EditTemplate = () => {
 
-    const [data, setData] = useState({
+    const [FormData, setFormData] = useState({
         Name: '', Job_Position: '',
         Number: '', Email: '', Address: '', Web_Link: '',
         About: '',
-        Hobbies: ['', '', '', ''],
-        Skills: [
-            { skil: '', expertise: '' },
-            { skil: '', expertise: '' },
-            { skil: '', expertise: '' },
-            { skil: '', expertise: '' },
-            { skil: '', expertise: '' },
-        ],
+        
+        Hob1:'',Hob2:'', Hob3:'', Hob4:'',
+        
+        skill1:'',skill2:'',skill3:'',skill4:'',
+        skill_exp1:'',skill_exp2:'',skill_exp3:'',skill_exp4:'',
 
-        Languages: [
-            { lan: '', expertise: '' },
-            { lan: '', expertise: '' },
-            { lan: '', expertise: '' },
-            { lan: '', expertise: '' },
-            { lan: '', expertise: '' },
-        ],
+        Language1:'',Language2:'',Language3:'',Language4:'',Language5:'',
+        Language1_Exp:'',Language2_Exp:'',Language3_Exp:'',Language4_Exp:'',Language5_Exp:'',
 
-        Education: [
-            { edu_start_year: '', edu_end_year: '',Degree: '', Details:''  },
-            { edu_start_year: '', edu_end_year: '',Degree: '', Details:''  },
-        ],
+        Edu1_start_year:'', Edu1_end_year:'', Edu1_degree:'', Edu1_details:'',
+        Edu2_start_year:'', Edu2_end_year:'', Edu2_degree:'', Edu2_details:'',
 
-        Experience:[
-            { Exp_start_year: '', Exp_end_year: '', Company: '', Details:''  },
-            { Exp_start_year: '', Exp_end_year: '', Company: '', Details:''  },
-        ]
 
+        Exp1_start_year:'', Exp1_end_year:'', Exp1_degree:'', Exp1_details:'',
+        Exp2_start_year:'', Exp2_end_year:'', Exp2_degree:'', Exp2_details:'',
 
     });
 
 
+    let name, value;
+    const handleInput = (e) => {
+        // name = e.target.name;
+        // value = e.target.value;
+        // setFormData({ ...FormData, [name]: value })
+        FormData.Education.map((val)=>{
+            console.log(val.Degree)
+        })
+    }
 
     return (
         <Box my={4}>
@@ -65,10 +62,9 @@ const EditTemplate = () => {
                             </Box>
                             <Box mt={2}>
                                 <Box>
-                                    <label for="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
+                                    <label htmlFor="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
                                     <input type="text" id="name" placeholder='Name' className='form_input' /><br />
                                 </Box>
-
                                 <Box mt={1}>
                                     <label for="position" style={{ fontWeight: "600", }}>Job Position <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span> </label>
                                     <input type="text" id="position" placeholder='Job Position' className='form_input' /><br />
@@ -114,7 +110,7 @@ const EditTemplate = () => {
                                                 <ListItem><Typography variant="body1" color="initial" textAlign='left' fontWeight={600}>Experties</Typography> </ListItem>
                                             </Grid>
                                             <Grid xs={8} >
-                                                <ListItem><input type="text" placeholder='1st skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" onChange={(e)=>setFormData(FormData.Education)} placeholder='1st skill' className='form_input' /></ListItem>
                                                 <ListItem><input type="text" placeholder='2nd skill' className='form_input' /></ListItem>
                                                 <ListItem><input type="text" placeholder='3rd skill' className='form_input' /></ListItem>
                                                 <ListItem><input type="text" placeholder='4th skill' className='form_input' /></ListItem>
@@ -326,7 +322,7 @@ const EditTemplate = () => {
                 </Grid>
 
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 4 }}>
-                    <Button>Submit</Button>
+                    <Button onClick={handleInput}>Submit</Button>
                     <Button
                         sx={{
                             background: 'linear-gradient(45deg, #B02E0C 30%, #EB4511 90%)',
