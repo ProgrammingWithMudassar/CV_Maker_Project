@@ -8,25 +8,18 @@ import './Style.css'
 const EditTemplate = () => {
 
     const [FormData, setFormData] = useState({
-        Name: '', Job_Position: '',
-        Number: '', Email: '', Address: '', Web_Link: '',
-        About: '',
-        
-        Hob1:'',Hob2:'', Hob3:'', Hob4:'',
-        
-        skill1:'',skill2:'',skill3:'',skill4:'',
-        skill_exp1:'',skill_exp2:'',skill_exp3:'',skill_exp4:'',
-
-        Language1:'',Language2:'',Language3:'',Language4:'',Language5:'',
-        Language1_Exp:'',Language2_Exp:'',Language3_Exp:'',Language4_Exp:'',Language5_Exp:'',
-
-        Edu1_start_year:'', Edu1_end_year:'', Edu1_degree:'', Edu1_details:'',
-        Edu2_start_year:'', Edu2_end_year:'', Edu2_degree:'', Edu2_details:'',
-
-
-        Exp1_start_year:'', Exp1_end_year:'', Exp1_degree:'', Exp1_details:'',
-        Exp2_start_year:'', Exp2_end_year:'', Exp2_degree:'', Exp2_details:'',
-
+        // Name: '', Job_Position: '',
+        // Number: '', Email: '', Address: '', Web_Link: '',
+        // About: '',
+        // Hob1: '', Hob2: '', Hob3: '', Hob4: '',
+        // skill1: '', skill2: '', skill3: '', skill4: '',
+        // skill_exp1: '', skill_exp2: '', skill_exp3: '', skill_exp4: '',
+        // Language1: '', Language2: '', Language3: '', Language4: '', Language5: '',
+        // Language1_Exp: '', Language2_Exp: '', Language3_Exp: '', Language4_Exp: '', Language5_Exp: '',
+        // Edu1_start_year: '', Edu1_end_year: '', Edu1_degree: '', Edu1_details: '',
+        // Edu2_start_year: '', Edu2_end_year: '', Edu2_degree: '', Edu2_details: '',
+        // Exp1_start_year: '', Exp1_end_year: '', Exp1_degree: '', Exp1_details: '',
+        // Exp2_start_year: '', Exp2_end_year: '', Exp2_degree: '', Exp2_details: '',
     });
 
 
@@ -35,9 +28,7 @@ const EditTemplate = () => {
         // name = e.target.name;
         // value = e.target.value;
         // setFormData({ ...FormData, [name]: value })
-        FormData.Education.map((val)=>{
-            console.log(val.Degree)
-        })
+        console.log(FormData)
     }
 
     return (
@@ -63,11 +54,11 @@ const EditTemplate = () => {
                             <Box mt={2}>
                                 <Box>
                                     <label htmlFor="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                    <input type="text" id="name" placeholder='Name' className='form_input' /><br />
+                                    <input type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
                                 </Box>
                                 <Box mt={1}>
                                     <label for="position" style={{ fontWeight: "600", }}>Job Position <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span> </label>
-                                    <input type="text" id="position" placeholder='Job Position' className='form_input' /><br />
+                                    <input type="text" id="position" placeholder='Job Position' className='form_input' onChange={(e) => setFormData({ ...FormData, Job_position: e.target.value })} /><br />
                                 </Box>
                             </Box>
 
@@ -77,19 +68,19 @@ const EditTemplate = () => {
 
                                 <Box>
                                     <label for="number" style={{ fontWeight: "600", }}>Number <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                    <input type="number" id="number" placeholder='Contact Number' className='form_input' /><br />
+                                    <input type="number" id="number" placeholder='Contact Number' className='form_input' onChange={(e) => setFormData({ ...FormData, Number: e.target.value })} /><br />
                                 </Box>
                                 <Box mt={1}>
                                     <label for="email" style={{ fontWeight: "600", }}>Email <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                    <input type="email" id="email" placeholder='Email' className='form_input' /><br />
+                                    <input type="email" id="email" placeholder='Email' className='form_input' onChange={(e) => setFormData({ ...FormData, Email: e.target.value })} /><br />
                                 </Box>
                                 <Box mt={1}>
                                     <label for="address" style={{ fontWeight: "600", }}>Address <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                    <input type="address" id="address" placeholder='Address' className='form_input' /><br />
+                                    <input type="address" id="address" placeholder='Address' className='form_input' onChange={(e) => setFormData({ ...FormData, Address: e.target.value })} /><br />
                                 </Box>
                                 <Box mt={1}>
                                     <label for="website" style={{ fontWeight: "600", }}>Website Link</label>
-                                    <input type="website" id="website" placeholder='Website Link' className='form_input' /><br />
+                                    <input type="website" id="website" placeholder='Website Link' className='form_input' onChange={(e) => setFormData({ ...FormData, Web_Link: e.target.value })} /><br />
                                 </Box>
 
                             </Box>
@@ -110,18 +101,18 @@ const EditTemplate = () => {
                                                 <ListItem><Typography variant="body1" color="initial" textAlign='left' fontWeight={600}>Experties</Typography> </ListItem>
                                             </Grid>
                                             <Grid xs={8} >
-                                                <ListItem><input type="text" onChange={(e)=>setFormData(FormData.Education)} placeholder='1st skill' className='form_input' /></ListItem>
-                                                <ListItem><input type="text" placeholder='2nd skill' className='form_input' /></ListItem>
-                                                <ListItem><input type="text" placeholder='3rd skill' className='form_input' /></ListItem>
-                                                <ListItem><input type="text" placeholder='4th skill' className='form_input' /></ListItem>
-                                                <ListItem><input type="text" placeholder='5th skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill1: e.target.value })} placeholder='1st skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill2: e.target.value })} placeholder='2nd skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill3: e.target.value })} placeholder='3rd skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill4: e.target.value })} placeholder='4th skill' className='form_input' /></ListItem>
+                                                <ListItem><input type="text" onChange={(e) => setFormData({ ...FormData, skill4: e.target.value })} placeholder='5th skill' className='form_input' /></ListItem>
                                             </Grid>
                                             <Grid xs={4} >
-                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
-                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
-                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
-                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
-                                                <ListItem><input type="number" placeholder='%' className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' onChange={(e) => setFormData({ ...FormData, skill_exp1: e.target.value })} className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' onChange={(e) => setFormData({ ...FormData, skill_exp2: e.target.value })} className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' onChange={(e) => setFormData({ ...FormData, skill_exp3: e.target.value })} className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' onChange={(e) => setFormData({ ...FormData, skill_exp4: e.target.value })} className='form_input' /></ListItem>
+                                                <ListItem><input type="number" placeholder='%' onChange={(e) => setFormData({ ...FormData, skill_exp5: e.target.value })} className='form_input' /></ListItem>
                                             </Grid>
                                         </Grid>
                                     </List>
@@ -142,6 +133,7 @@ const EditTemplate = () => {
                             className='textarea_input'
                             rows="10" cols="50"
                             maxLength={250}
+                            onChange={(e) => setFormData({ ...FormData, About: e.target.value })}
                         /><br />
 
                         {/* Education  */}
@@ -154,13 +146,13 @@ const EditTemplate = () => {
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>First Degree <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Starting year' onChange={(e) => setFormData({ ...FormData, Edu1_start_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Ending year' onChange={(e) => setFormData({ ...FormData, Edu1_end_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={12} >
-                                        <ListItem> <input type="text" className='form_input' placeholder='Degree Name' /></ListItem>
+                                        <ListItem> <input type="text" className='form_input' placeholder='Degree Name' onChange={(e) => setFormData({ ...FormData, Edu1_degree: e.target.value })} /></ListItem>
                                         <ListItem>
                                             <textarea
                                                 type="about"
@@ -169,6 +161,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
+                                                onChange={(e) => setFormData({ ...FormData, Edu1_details: e.target.value })}
                                             /></ListItem>
                                     </Grid>
 
@@ -177,13 +170,13 @@ const EditTemplate = () => {
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Second Degree <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Starting year' onChange={(e) => setFormData({ ...FormData, Edu2_start_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Ending year' onChange={(e) => setFormData({ ...FormData, Edu2_end_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={12} >
-                                        <ListItem> <input type="text" className='form_input' placeholder='Degree Name' /></ListItem>
+                                        <ListItem> <input type="text" className='form_input' placeholder='Degree Name' onChange={(e) => setFormData({ ...FormData, Edu2_degree: e.target.value })} /></ListItem>
                                         <ListItem>
                                             <textarea
                                                 type="about"
@@ -192,6 +185,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
+                                                onChange={(e) => setFormData({ ...FormData, Edu2_details: e.target.value })} 
                                             /></ListItem>
                                     </Grid>
                                 </Grid>
@@ -204,13 +198,13 @@ const EditTemplate = () => {
                                 <Typography variant="body2" color="initial" mt={0.9}>(min. add 3 hobbies) </Typography>
                             </Box>
                             <Grid container spacing={2}>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input' /><br /> </Grid>
-                            </Grid>
-                        </Box>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob1: e.target.value })} /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob2: e.target.value })} /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob3: e.target.value })} /><br /> </Grid>
+                                <Grid item xs={6}> <input type="text" id="name" placeholder='Name' className='form_input'  onChange={(e) => setFormData({ ...FormData, Hob4: e.target.value })} /><br /> </Grid>
+                                </Grid>
 
+                        </Box>
 
                     </Grid>
 
@@ -227,13 +221,13 @@ const EditTemplate = () => {
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>First Experience <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='Start' maxLength={4} /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' maxLength={4} onChange={(e) => setFormData({ ...FormData, Exp1_start_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' onChange={(e) => setFormData({ ...FormData, Exp1_end_year: e.target.value })} /></ListItem>
                                     </Grid>
                                     <Grid item xs={12} >
-                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' /></ListItem>
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' onChange={(e) => setFormData({ ...FormData, Exp1_compnay_name: e.target.value })} /></ListItem>
                                         <ListItem>
                                             <textarea
                                                 type="about"
@@ -242,6 +236,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
+                                                onChange={(e) => setFormData({ ...FormData, Exp1_details: e.target.value })} 
                                             /></ListItem>
                                     </Grid>
 
@@ -250,13 +245,13 @@ const EditTemplate = () => {
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Second Experience <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></Typography>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' onChange={(e) => setFormData({ ...FormData, Exp2_start_year: e.target.value })}/></ListItem>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' onChange={(e) => setFormData({ ...FormData, Exp2_end_year: e.target.value })}/></ListItem>
                                     </Grid>
                                     <Grid item xs={12} >
-                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' /></ListItem>
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' onChange={(e) => setFormData({ ...FormData, Exp2_compnay_name: e.target.value })}/></ListItem>
                                         <ListItem>
                                             <textarea
                                                 type="about"
@@ -265,6 +260,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
+                                                onChange={(e) => setFormData({ ...FormData, Exp2_details: e.target.value })} 
                                             /></ListItem>
                                     </Grid>
 
@@ -272,13 +268,13 @@ const EditTemplate = () => {
                                         <Typography variant="body1" color="initial" textAlign='center' fontWeight={600}>Third Experience</Typography>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='Start' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='Start' onChange={(e) => setFormData({ ...FormData, Exp3_start_year: e.target.value })}/></ListItem>
                                     </Grid>
                                     <Grid item xs={6} >
-                                        <ListItem> <input type="number" className='form_input' placeholder='End' /></ListItem>
+                                        <ListItem> <input type="number" className='form_input' placeholder='End' onChange={(e) => setFormData({ ...FormData, Exp3_end_year: e.target.value })}/></ListItem>
                                     </Grid>
                                     <Grid item xs={12} >
-                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' /></ListItem>
+                                        <ListItem> <input type="text" className='form_input' placeholder='Company Name' onChange={(e) => setFormData({ ...FormData, Exp3_compnay_name: e.target.value })}/></ListItem>
                                         <ListItem>
                                             <textarea
                                                 type="about"
@@ -287,6 +283,7 @@ const EditTemplate = () => {
                                                 className='textarea_input'
                                                 rows="6" cols="50"
                                                 maxLength={150}
+                                                onChange={(e) => setFormData({ ...FormData, Exp3_details: e.target.value })} 
                                             /></ListItem>
                                     </Grid>
                                 </Grid>
