@@ -1,9 +1,12 @@
 import React from 'react'
+import { CV1 } from './CVs/index.js'
 
-const CV1 = () => {
+const CV = () => {
   return (
-    <div>CV1</div>
+    <div>
+      <CV1 />
+    </div>
   )
 }
 
-export default CV1
+export default CV
