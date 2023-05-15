@@ -70,6 +70,54 @@ export const counterSlice = createSlice({
 
     },
 
+    ClearFormData:(state)=>{
+      state.Name = ''
+      state.Job_position = '';
+      state.Number = '';
+      state.Email = '';
+      state.Address = '';
+      state.Web_Link = '';
+      state.About = '';
+      state.Hob1 = ''
+      state.Hob2 = ''
+      state.Hob3 = ''
+      state.Hob4 = ''
+      state.skill1 = '';
+      state.skill2 = '';
+      state.skill3 = '';
+      state.skill4 = '';
+      state.skill5 = '';
+      state.skill_exp1 = '';
+      state.skill_exp2 = '';
+      state.skill_exp3 = '';
+      state.skill_exp4 = '';
+      state.skill_exp5 = '';
+      state.Language1 = '';
+      state.Language2 = '';
+      state.Language3 = '';
+      state.Edu1_start_year = '';
+      state.Edu1_end_year = '';
+      state.Edu1_degree = '';
+      state.Edu1_details = '';
+      state.Edu2_start_year = '';
+      state.Edu2_end_year = '';
+      state.Edu2_degree = '';
+      state.Edu2_details = '';
+      state.Exp1_start_year = '';
+      state.Exp1_end_year = '';
+      state.Exp1_compnay_name = '';
+      state.Exp1_details = '';
+      state.Exp2_start_year = '';
+      state.Exp2_end_year = '';
+      state.Exp2_compnay_name = '';
+      state.Exp2_details = '';
+      state.Exp3_start_year = '';
+      state.Exp3_end_year = '';
+      state.Exp3_compnay_name = '';
+      state.Exp3_details = '';
+
+    },
+
     incrementByAmount: (state, action) => {
       state.value += action.payload
     },
@@ -77,6 +125,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { UpdateState, incrementByAmount } = counterSlice.actions
+export const { UpdateState, incrementByAmount, ClearFormData } = counterSlice.actions
 
 export default counterSlice.reducer

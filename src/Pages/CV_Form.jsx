@@ -4,7 +4,7 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import { ToastContainer, toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux'
-import { UpdateState } from '../Features/Counter/CounterSlice'
+import { UpdateState , ClearFormData} from '../Features/Counter/CounterSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import './Style.css'
 
@@ -39,7 +39,6 @@ const EditTemplate = () => {
             skill1, skill2, skill3,
             skill_exp1, skill_exp2, skill_exp3,
             Language1, Language2, Language3,
-            Language1_Exp, Language2_Exp, Language3_Exp,
             Edu1_start_year, Edu1_end_year, Edu1_degree, Edu1_details,
             Edu2_start_year, Edu2_end_year, Edu2_degree, Edu2_details,
             Exp1_start_year, Exp1_end_year, Exp1_compnay_name, Exp1_details,
@@ -55,7 +54,7 @@ const EditTemplate = () => {
             Edu1_start_year && Edu1_end_year && Edu1_degree && Edu1_details &&
             Edu2_start_year && Edu2_end_year && Edu2_degree && Edu2_details &&
             Exp1_start_year && Exp1_end_year && Exp1_compnay_name && Exp1_details &&
-            Exp2_start_year && Exp2_end_year && Exp2_compnay_name && Exp2_details 
+            Exp2_start_year && Exp2_end_year && Exp2_compnay_name && Exp2_details
 
         ) {
             dispatch(UpdateState(FormData))
@@ -65,6 +64,21 @@ const EditTemplate = () => {
             toast.error('Please fill all fields');
         }
     }
+
+    const ClearState = () => {
+        dispatch(ClearFormData());
+        window.location.reload();
+    }
+
+
+    const [DefaultFormData, setDefaultFormData] = useState([]);
+    const persistedData = useSelector((state) => state);
+
+    useEffect(() => {
+        setDefaultFormData(persistedData.PersistedReducer.reducer);
+
+    }, [])
+
 
     return (
         <Box my={4}>
@@ -89,7 +103,7 @@ const EditTemplate = () => {
                             <Box mt={2}>
                                 <Box>
                                     <label htmlFor="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                    <input type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
+                                    <input type="text" id="name" placeholder='Name' defaultValue={DefaultFormData.Name} className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
                                 </Box>
                                 <Box mt={1}>
                                     <label for="position" style={{ fontWeight: "600", }}>Job Position <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span> </label>
@@ -363,7 +377,7 @@ const EditTemplate = () => {
                                 backgroundColor: 'red',
                             },
                         }}
-                        onClick={() => window.location.reload()}
+                        onClick={ClearState}
                     >Clear All</Button>
                 </Box>
                 <Box sx={{ mt: { xs: 2, md: 4 } }}>
