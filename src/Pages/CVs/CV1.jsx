@@ -33,7 +33,7 @@ const CV1 = () => {
         {/* Left  */}
         <Grid container spacing={4} >
           <Grid item xs={4} textAlign='left' backgroundColor='#053D71' color="#fff" >
-            <Box sx={{ height: '1000px' }}>
+            <Box sx={{ height: '1050px' }}>
               <Box className="ImgBoxInCv">
                 <Typography variant="body1" color="initial"></Typography>
               </Box>
@@ -49,7 +49,7 @@ const CV1 = () => {
               />
 
               {/* Contact  */}
-              <Box textAlign='left' mt={4}>
+              <Box textAlign='left' mt={2}>
                 <Typography variant="h5" fontWeight={600}>Contact Me.</Typography>
                 <Box display='flex' alignItems='center' mt={2} >
                   <CallIcon color="#fff" sx={{ mx: 3 }} />
@@ -70,7 +70,7 @@ const CV1 = () => {
               </Box>
 
               {/* Skill */}
-              <Box textAlign='left' mt={4}>
+              <Box textAlign='left' mt={2}>
                 <Typography variant="h5" fontWeight={600} >Skill's.</Typography>
                 <Box sx={{ display: 'flex', px: 3, justifyContent: 'space-between' }} mt={2}>
                   <Typography variant="body1" >{FormData.skill1}</Typography>
@@ -87,29 +87,45 @@ const CV1 = () => {
                 <Box sx={{ display: 'flex', px: 3, justifyContent: 'space-between' }}>
                   <Typography variant="body1" >{FormData.skill4}</Typography>
                   {
-                    FormData.skill_exp4 === '' ? <Typography variant="body1" >{FormData.skill_exp4}%</Typography> : ""
+                    FormData.skill_exp4 === '' ? "" : <Typography variant="body1" >{FormData.skill_exp5}%</Typography>
                   }
                 </Box>
                 <Box sx={{ display: 'flex', px: 3, justifyContent: 'space-between' }}>
                   <Typography variant="body1" >{FormData.skill5}</Typography>
                   {
-                    FormData.skill_exp5 == '' ? <Typography variant="body1" >{FormData.skill_exp5}%</Typography> : ""
+                    FormData.skill_exp5 === '' ? "" : <Typography variant="body1" >{FormData.skill_exp5}%</Typography>
                   }
                 </Box>
               </Box>
 
+
+
+              {/* Language */}
+              <Box textAlign='left' mt={2}>
+                <Typography variant="h5" fontWeight={600} >Language's.</Typography>
+                <Box sx={{ display: 'flex', px: 6, justifyContent: 'space-between' }} mt={2}>
+                  <ul>
+                    <li>{FormData.Language1}</li>
+                    <li>{FormData.Language2}</li>
+                    {
+                      FormData.Language3 === '' ? '' : <li>{FormData.Hob3}</li>
+                    }
+                  </ul>
+                </Box>
+              </Box>
+
               {/* Hobbies */}
-              <Box textAlign='left' mt={4}>
+              <Box textAlign='left' mt={2}>
                 <Typography variant="h5" fontWeight={600}>Hobbies.</Typography>
                 <Box sx={{ display: 'flex', px: 6, justifyContent: 'space-between' }} mt={2}>
                   <ul>
                     <li>{FormData.Hob1}</li>
                     <li>{FormData.Hob2}</li>
                     {
-                      FormData.Hob3 === '' ? <li>{FormData.Hob3}</li> : ''
+                      FormData.Hob3 === '' ? '' : <li>{FormData.Hob3}</li>
                     }
                     {
-                      FormData.Hob4 === '' ? <li>{FormData.Hob4}</li> : ''
+                      FormData.Hob4 === '' ? '' : <li>{FormData.Hob3}</li>
                     }
                   </ul>
                 </Box>
@@ -187,7 +203,7 @@ const CV1 = () => {
                     <Typography variant="h6" fontWeight={600} >{FormData.Edu2_start_year}-{FormData.Edu2_end_year}</Typography>
                   </Box>
                   <Typography variant="h6" fontWeight={600}>{FormData.Edu2_degree}</Typography>
-                  <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>{FormData.Edu2_degree}</Typography>
+                  <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>{FormData.Edu2_details}</Typography>
                 </Box>
               </Box>
             </Box>

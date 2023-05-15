@@ -48,7 +48,14 @@ const EditTemplate = () => {
 
 
         if (
-            Name && Job_position
+            Name && Job_position && Number && Email && Address && About && Hob1 && Hob2 &&
+            skill1 && skill2 && skill3 &&
+            skill_exp1 && skill_exp2 && skill_exp3 &&
+            Language1 && Language2 && Language3 &&
+            Edu1_start_year && Edu1_end_year && Edu1_degree && Edu1_details &&
+            Edu2_start_year && Edu2_end_year && Edu2_degree && Edu2_details &&
+            Exp1_start_year && Exp1_end_year && Exp1_compnay_name && Exp1_details &&
+            Exp2_start_year && Exp2_end_year && Exp2_compnay_name && Exp2_details 
 
         ) {
             dispatch(UpdateState(FormData))
@@ -329,16 +336,16 @@ const EditTemplate = () => {
                                         <Grid xs={4}>
                                             <ListItem><Typography variant="body1" color="initial" textAlign='left' fontWeight={600}>Experties</Typography> </ListItem>
                                         </Grid>
-                                        <Grid xs={8} >
+                                        <Grid xs={12} >
                                             <ListItem><input type="text" placeholder='1st language' className='form_input' onChange={(e) => setFormData({ ...FormData, Language1: e.target.value })} /></ListItem>
                                             <ListItem><input type="text" placeholder='2nd language' className='form_input' onChange={(e) => setFormData({ ...FormData, Language2: e.target.value })} /></ListItem>
                                             <ListItem><input type="text" placeholder='3rd language' className='form_input' onChange={(e) => setFormData({ ...FormData, Language3: e.target.value })} /></ListItem>
                                         </Grid>
-                                        <Grid xs={4} >
+                                        {/* <Grid xs={4} >
                                             <ListItem><input type="number" placeholder='%' className='form_input' onChange={(e) => setFormData({ ...FormData, Language1_Exp: e.target.value })} /></ListItem>
                                             <ListItem><input type="number" placeholder='%' className='form_input' onChange={(e) => setFormData({ ...FormData, Language2_Exp: e.target.value })} /></ListItem>
                                             <ListItem><input type="number" placeholder='%' className='form_input' onChange={(e) => setFormData({ ...FormData, Language3_Exp: e.target.value })} /></ListItem>
-                                        </Grid>
+                                        </Grid> */}
                                     </Grid>
                                 </List>
                             </Card>
