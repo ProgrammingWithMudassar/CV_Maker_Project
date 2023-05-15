@@ -1,15 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  Name: '', Job_Position: '',
+  Name: '', Job_position: '',
   Number: '', Email: '', Address: '', Web_Link: '',
   About: '',
   Hob1: '', Hob2: '', Hob3: '', Hob4: '',
-  skill1: '', skill2: '', skill3: '', skill4: '',
-  skill_exp1: '', skill_exp2: '', skill_exp3: '', skill_exp4: '',
-  Language1: '', Language2: '', Language3: '', Language4: '', Language5: '',
-  Language1_Exp: '', Language2_Exp: '', Language3_Exp: '', Language4_Exp: '',
-  Language5_Exp: '',
+  skill1: '', skill2: '', skill3: '', skill4: '',skill5: '',
+  skill_exp1: '', skill_exp2: '', skill_exp3: '', skill_exp4: '',skill_exp5: '',
+  Language1: '', Language2: '', Language3: '',
+  Language1_Exp: '', Language2_Exp: '', Language3_Exp: '', 
   Edu1_start_year: '', Edu1_end_year: '', Edu1_degree: '', Edu1_details: '',
   Edu2_start_year: '', Edu2_end_year: '', Edu2_degree: '', Edu2_details: '',
   Exp1_start_year: '', Exp1_end_year: '', Exp1_compnay_name: '', Exp1_details: '',
@@ -26,7 +25,7 @@ export const counterSlice = createSlice({
       const payload = action.payload;
 
       state.Name = payload.Name;
-      state.Job_Position = payload.Job_Position;
+      state.Job_position = payload.Job_position;
       state.Number = payload.Number;
       state.Email = payload.Email;
       state.Address = payload.Address;
@@ -40,20 +39,18 @@ export const counterSlice = createSlice({
       state.skill2 = payload.skill2;
       state.skill3 = payload.skill3;
       state.skill4 = payload.skill4;
+      state.skill5 = payload.skill5;
       state.skill_exp1 = payload.skill_exp1;
       state.skill_exp2 = payload.skill_exp2;
       state.skill_exp3 = payload.skill_exp3;
       state.skill_exp4 = payload.skill_exp4;
+      state.skill_exp5 = payload.skill_exp5;
       state.Language1 = payload.Language1;
       state.Language2 = payload.Language2;
       state.Language3 = payload.Language3;
-      state.Language4 = payload.Language4;
-      state.Language5 = payload.Language5;
       state.Language1_Exp = payload.Language1_Exp;
       state.Language2_Exp = payload.Language2_Exp;
       state.Language3_Exp = payload.Language3_Exp;
-      state.Language4_Exp = payload.Language4_Exp;
-      state.Language5_Exp = payload.Language5_Exp;
       state.Edu1_start_year = payload.Edu1_start_year;
       state.Edu1_end_year = payload.Edu1_end_year;
       state.Edu1_degree = payload.Edu1_degree;
