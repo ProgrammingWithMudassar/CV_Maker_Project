@@ -23,7 +23,7 @@ const CV1 = () => {
         {/* Left  */}
         <Grid container spacing={4} >
           <Grid item xs={4} textAlign='left' backgroundColor='#053D71' color="#fff" >
-            <Box sx={{height:'1000px'}}>
+            <Box sx={{ height: '1000px' }}>
               <Box className="ImgBoxInCv">
                 <Typography variant="body1" color="initial"></Typography>
               </Box>
@@ -35,7 +35,7 @@ const CV1 = () => {
                 variant="fullWidth"
                 orientation="horizontal"
                 color="#fff"
-                sx={{ my: 2 }}
+                sx={{ my: 2, width: '95%' }}
               />
 
               {/* Contact  */}
@@ -106,12 +106,74 @@ const CV1 = () => {
 
           {/* Right  */}
           <Grid item xs={8} textAlign='left'>
-            <Box mt={2}>
-              <Typography variant="h5" fontWeight={600}>About.</Typography>
-              <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut neque iaculis,
-                commodo nisl eget, vulputate orci. Praesent condimentum nisl eu facilisis egestas.
-                Vivamus porttitor lacinia dui sed tincidunt. Integer maximus, leo eu eleifend laoreet,
-                felis tortor eleifend odio, sit amet suscipit quam ante id justo. Nunc rhoncus erat ac lectus malesuada.</Typography>
+            <Box sx={{ height: '1000px', py: 6 }}>
+              {/* About  */}
+              <Box >
+                <Typography variant="h5" fontWeight={600}>About.</Typography>
+                <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut neque iaculis,
+                  commodo nisl eget, vulputate orci. Praesent condimentum nisl eu facilisis egestas.
+                  Vivamus porttitor lacinia dui sed tincidunt. Integer maximus, leo eu eleifend laoreet,
+                  felis tortor eleifend odio, sit amet suscipit quam ante id justo. Nunc rhoncus erat ac lectus malesuada.</Typography>
+              </Box>
+
+              <Divider
+                variant="fullWidth"
+                orientation="horizontal"
+                color="#053D71"
+                sx={{ my: 2, width: '95%' }}
+              />
+
+
+              {/* Experince  */}
+              <Box mt={4}>
+                <Typography variant="h5" fontWeight={600} my={2}>Experince.</Typography>
+                <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                  <Typography variant="h6" fontWeight={600} >2020-2021</Typography>
+                </Box>
+                <Typography variant="h6" fontWeight={600}>Company Name</Typography>
+                <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>Life is short. Chase your dreams, embrace the unknown, and find joy in every moment. Make every day count and never stop believing.</Typography>
+                <Box>
+                  <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                    <Typography variant="h6" fontWeight={600} >2020-2021</Typography>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600}>Company Name</Typography>
+                  <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>Life is short. Chase your dreams, embrace the unknown, and find joy in every moment. Make every day count and never stop believing.</Typography>
+                </Box>
+
+
+                <Box>
+                  <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                    <Typography variant="h6" fontWeight={600} >2020-2021</Typography>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600}>Company Name</Typography>
+                  <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>Life is short. Chase your dreams, embrace the unknown, and find joy in every moment. Make every day count and never stop believing.</Typography>
+                </Box>
+              </Box>
+
+              <Divider
+                variant="fullWidth"
+                orientation="horizontal"
+                color="#053D71"
+                sx={{ my: 2, width: '95%' }}
+              />
+
+
+              {/* Education  */}
+              <Box mt={4}>
+                <Typography variant="h5" fontWeight={600} my={2}>Education.</Typography>
+                <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                  <Typography variant="h6" fontWeight={600} >2020-2021</Typography>
+                </Box>
+                <Typography variant="h6" fontWeight={600}>Degree Name</Typography>
+                <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>Life is short. Chase your dreams, embrace the unknown, and find joy in every moment. Make every day count and never stop believing.</Typography>
+                <Box>
+                  <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                    <Typography variant="h6" fontWeight={600} >2020-2021</Typography>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600}>Degree Name</Typography>
+                  <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>Life is short. Chase your dreams, embrace the unknown, and find joy in every moment. Make every day count and never stop believing.</Typography>
+                </Box>
+              </Box>
             </Box>
           </Grid>
         </Grid>
