@@ -74,6 +74,7 @@ export const counterSlice = createSlice({
       state.Exp3_end_year = payload.Exp3_end_year;
       state.Exp3_compnay_name = payload.Exp3_compnay_name;
       state.Exp3_details = payload.Exp3_details;
+
     },
 
     incrementByAmount: (state, action) => {

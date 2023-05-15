@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Box, Container, Typography, Button, Grid, Card, ListItem, List, Divider } from '@mui/material'
 import ReplyIcon from '@mui/icons-material/Reply';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import './Style.css'
 import { ToastContainer, toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux'
 import { UpdateState } from '../Features/Counter/CounterSlice'
 import { Link, useNavigate } from 'react-router-dom'
+import './Style.css'
 
 
 const EditTemplate = () => {
@@ -53,7 +53,7 @@ const EditTemplate = () => {
         ) {
             dispatch(UpdateState(FormData))
             toast.success('Register Successfully');
-            navigate('/resume/cv1');
+            navigate('/resume/cv');
         } else {
             toast.error('Please fill all fields');
         }
@@ -63,7 +63,7 @@ const EditTemplate = () => {
         <Box my={4}>
             <Box sx={{ width: "100%" }}>
                 <Link to='/resume'>
-                    <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "500px" } }}> <ReplyIcon sx={{ ml: -0.5, mt: -0.5 }} /> Back </Button>
+                    <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" } }}> <ReplyIcon sx={{ ml: -0.5, mt: -0.5 }} /> Back </Button>
                 </Link>
             </Box>
             <Container >
