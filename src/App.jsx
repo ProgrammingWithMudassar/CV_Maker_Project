@@ -25,7 +25,7 @@ function App() {
           <Route path='/' element={<PrivateRoute />} >
             <Route exact path='/resume' element={<Templates />} />
             <Route path='/resume/:id' element={<CV_Form />} />
-            <Route path='/resume/cv' element={<CV />} />
+            <Route path='/resume/:id/cv' element={<CV />} />
           </Route>
         </Routes>
       </Router>

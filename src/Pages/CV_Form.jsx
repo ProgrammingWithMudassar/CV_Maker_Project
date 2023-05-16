@@ -1,43 +1,27 @@
-import React, { useEffect, useState , useRef} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Box, Container, Typography, Button, Grid, Card, ListItem, List, Divider } from '@mui/material'
 import ReplyIcon from '@mui/icons-material/Reply';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import { ToastContainer, toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux'
-import { UpdateState , ClearFormData} from '../Features/Counter/CounterSlice'
-import { Link, useNavigate } from 'react-router-dom'
+import { UpdateState, ClearFormData } from '../Features/Counter/CounterSlice'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import './Style.css'
 
 
 const EditTemplate = () => {
 
-    const [FormData, setFormData] = useState({
-        // Name, Job_Position: '',
-        // Number: '', Email: '', Address: '', Web_Link: '',
-        // About: '',
-        // Hob1: '', Hob2: '', Hob3: '', Hob4: '',
-        // skill1: '', skill2: '', skill3: '', skill4: '',
-        // skill_exp1: '', skill_exp2: '', skill_exp3: '', skill_exp4: '',
-        // Language1: '', Language2: '', Language3: '', Language4: '', Language5: '',
-        // Language1_Exp: '', Language2_Exp: '', Language3_Exp: '', Language4_Exp: '', Language5_Exp: '',
-        // Edu1_start_year: '', Edu1_end_year: '', Edu1_degree: '', Edu1_details: '',
-        // Edu2_start_year: '', Edu2_end_year: '', Edu2_degree: '', Edu2_details: '',
-        // Exp1_start_year: '', Exp1_end_year: '', Exp1_compnay_name: '', Exp1_details: '',
-        // Exp2_start_year: '', Exp2_end_year: '', Exp2_compnay_name: '', Exp2_details: '',
-        // Exp3_start_year: '', Exp3_end_year: '', Exp3_compnay_name: '', Exp3_details: '',
-    });
+    const [FormData, setFormData] = useState({});
 
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // const defaultValueRef = useRef(DefaultFormData);
+    const { id } = useParams();
+
 
     const handleInput = (e) => {
-
-        let {
-            Name, Job_position, Number, Email, Address, About, Hob1, Hob2,
-            skill1, skill2, skill3,
-            skill_exp1, skill_exp2, skill_exp3,
+        let { Name, Job_position, Number, Email, Address, About, Hob1, Hob2,
+            skill1, skill2, skill3, skill_exp1, skill_exp2, skill_exp3,
             Language1, Language2, Language3,
             Edu1_start_year, Edu1_end_year, Edu1_degree, Edu1_details,
             Edu2_start_year, Edu2_end_year, Edu2_degree, Edu2_details,
@@ -45,9 +29,8 @@ const EditTemplate = () => {
             Exp2_start_year, Exp2_end_year, Exp2_compnay_name, Exp2_details,
         } = FormData;
 
-
         if (
-            Name 
+            Name
             // && Job_position && Number && Email && Address && About && Hob1 && Hob2 &&
             // skill1 && skill2 && skill3 &&
             // skill_exp1 && skill_exp2 && skill_exp3 &&
@@ -60,7 +43,7 @@ const EditTemplate = () => {
         ) {
             dispatch(UpdateState(FormData))
             toast.success('Register Successfully');
-            navigate('/resume/cv');
+            navigate(`/resume/${id}/cv`);
         } else {
             toast.error('Please fill all fields');
         }
@@ -85,7 +68,7 @@ const EditTemplate = () => {
     return (
         <Box my={4}>
             <Box sx={{ width: "100%" }}>
-                <Link to='/resume'>
+                <Link to='/resume' >
                     <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" } }}> <ReplyIcon sx={{ ml: -0.5, mt: -0.5 }} /> Back </Button>
                 </Link>
             </Box>
@@ -95,17 +78,16 @@ const EditTemplate = () => {
                     {/* First Grid  */}
                     <Grid item xs={12} sm={6} md={4} >
                         <Box >
-
                             {/* Name  & Position*/}
                             <Box className="file-upload-container">
-                                <input defaultValue={DefaultFormData.Name} type="file" id="file-upload" className='input_file' />
+                                <input type="file" id="file-upload" className='input_file' />
                                 <label htmlFor="file-upload" className="custom-file-upload"> <CameraAltIcon sx={{ opacity: '0.5' }} /> </label>
                                 <Typography variant="h6" color="initial" fontWeight={600}>Upload Profile Image</Typography>
                             </Box>
                             <Box mt={2}>
                                 <Box>
                                     <label htmlFor="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                    <input defaultValue={DefaultFormData.Name}  type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
+                                    <input defaultValue={DefaultFormData.Name} type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
                                 </Box>
                                 <Box mt={1}>
                                     <label for="position" style={{ fontWeight: "600", }}>Job Position <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span> </label>
@@ -212,7 +194,7 @@ const EditTemplate = () => {
                                                 placeholder='Describe yourself in 150 letters'
                                                 className='textarea_input'
                                                 rows="6" cols="50"
-                                                maxLength={150}  defaultValue={DefaultFormData.Edu1_details}
+                                                maxLength={150} defaultValue={DefaultFormData.Edu1_details}
                                                 onChange={(e) => setFormData({ ...FormData, Edu1_details: e.target.value })}
                                             /></ListItem>
                                     </Grid>
@@ -333,7 +315,7 @@ const EditTemplate = () => {
                                                 id="about"
                                                 placeholder='Describe into 150 letters'
                                                 className='textarea_input'
-                                                rows="6" cols="50" 
+                                                rows="6" cols="50"
                                                 maxLength={150} defaultValue={DefaultFormData.Edu3_details}
                                                 onChange={(e) => setFormData({ ...FormData, Exp3_details: e.target.value })}
                                             /></ListItem>
