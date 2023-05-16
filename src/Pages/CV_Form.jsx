@@ -30,7 +30,7 @@ const EditTemplate = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const defaultValueRef = useRef(DefaultFormData);
+    // const defaultValueRef = useRef(DefaultFormData);
 
     const handleInput = (e) => {
 
@@ -77,7 +77,7 @@ const EditTemplate = () => {
 
     useEffect(() => {
         setDefaultFormData(persistedData.PersistedReducer.reducer);
-        setFormData(defaultValueRef.current);
+        // setFormData(defaultValueRef.current);
 
     }, [])
 
@@ -105,7 +105,7 @@ const EditTemplate = () => {
                             <Box mt={2}>
                                 <Box>
                                     <label htmlFor="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                    <input defaultValue={DefaultFormData.Name}   ref={inputRef} type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
+                                    <input defaultValue={DefaultFormData.Name}  type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
                                 </Box>
                                 <Box mt={1}>
                                     <label for="position" style={{ fontWeight: "600", }}>Job Position <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span> </label>
