@@ -6,6 +6,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import LinkIcon from '@mui/icons-material/Link';
 import EditIcon from '@mui/icons-material/Edit';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../Style.css'
 
 const CV3 = () => {
@@ -22,11 +23,15 @@ const CV3 = () => {
     window.history.go(-1);
   };
 
+
   return (
     <Box mt={4}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
-        <Button sx={{p:2}} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit </Button>
-        <Button sx={{p:2}} > Submit </Button>
+        <Link to='/'>
+          <Button sx={{ p: 2 }} > Go Main </Button>
+        </Link>
+        <Button sx={{ p: 2 }} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit </Button>
+        <Button sx={{ p: 2 }} > Submit </Button>
       </Box>
       <Container className='CV_container'>
         {/* Left  */}

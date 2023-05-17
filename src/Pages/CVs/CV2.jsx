@@ -8,6 +8,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
 import LinkIcon from '@mui/icons-material/Link';
 import { useSelector } from 'react-redux';
+import EditIcon from '@mui/icons-material/Edit';
 
 const CV2 = () => {
 
@@ -26,8 +27,12 @@ const CV2 = () => {
   return (
     <Box mt={4}>
       {console.log(FormData)}
-      <Box sx={{ width: "100%" }}>
-        <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" } }} onClick={goBack}> <ReplyIcon sx={{ ml: -0.5, mt: -0.5 }} /> Back </Button>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
+        <Link to='/'>
+          <Button sx={{ p: 2 }} > Go Main </Button>
+        </Link>
+        <Button sx={{ p: 2 }} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit </Button>
+        <Button sx={{ p: 2 }} > Submit </Button>
       </Box>
       <Container className='CV_container'>
         {/* Left  */}
