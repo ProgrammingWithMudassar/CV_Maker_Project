@@ -69,7 +69,7 @@ const EditTemplate = () => {
         <Box my={4}>
             <Box sx={{ width: "100%" }}>
                 <Link to='/resume' >
-                    <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" } }}> <ReplyIcon sx={{ ml: -0.5, mt: -0.5 }} /> Back </Button>
+                    <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" }, px:2 }}> <ReplyIcon sx={{ mr: 1, mt: -0.5 }} /> Back </Button>
                 </Link>
             </Box>
             <Container >

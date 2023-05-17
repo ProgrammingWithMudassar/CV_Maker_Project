@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Box, Button, Grid, Typography, Divider } from '@mui/material'
-import { Form, Link } from 'react-router-dom'
 import ReplyIcon from '@mui/icons-material/Reply';
 import '../Style.css'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
 import LinkIcon from '@mui/icons-material/Link';
+import EditIcon from '@mui/icons-material/Edit';
 import { useSelector } from 'react-redux';
 
 const CV1 = () => {
@@ -25,9 +25,9 @@ const CV1 = () => {
 
   return (
     <Box mt={4}>
-      {console.log(FormData)}
-      <Box sx={{ width: "100%" }}>
-        <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" } }} onClick={goBack}> <ReplyIcon sx={{ ml: -0.5, mt: -0.5 }} /> Back </Button>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
+        <Button sx={{p:2}} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit CV </Button>
+        <Button sx={{p:2}} > Submit </Button>
       </Box>
       <Container className='CV_container'>
         {/* Left  */}

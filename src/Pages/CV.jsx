@@ -1,5 +1,5 @@
 import React from 'react'
-import { CV1 } from './CVs/index.js'
+import { CV1, CV2, CV3, CV4 } from './CVs/index.js'
 import { useParams } from 'react-router-dom'
 
 const CV = () => {
@@ -9,15 +9,15 @@ const CV = () => {
 
   if (id === 'health') {
     componentToRender = <CV1 />;
-  } 
+  }
   else if (id === 'IT') {
-    componentToRender = <CV1 />;
+    componentToRender = <CV2 />;
   }
   else if (id === 'business') {
-    componentToRender = <CV1 />;
+    componentToRender = <CV3 />;
   }
   else if (id === 'managment') {
-    componentToRender = <CV1 />;
+    componentToRender = <CV4 />;
   }
 
 
