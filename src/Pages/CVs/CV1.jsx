@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Box, Button, Grid, Typography, Divider } from '@mui/material'
-import ReplyIcon from '@mui/icons-material/Reply';
-import '../Style.css'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
 import LinkIcon from '@mui/icons-material/Link';
 import EditIcon from '@mui/icons-material/Edit';
 import { useSelector } from 'react-redux';
+import '../Style.css'
 
 const CV1 = () => {
 
