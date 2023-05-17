@@ -25,7 +25,7 @@ const CV1 = () => {
   return (
     <Box mt={4}>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
-        <Button sx={{p:2}} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit CV </Button>
+        <Button sx={{p:2}} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit </Button>
         <Button sx={{p:2}} > Submit </Button>
       </Box>
       <Container className='CV_container'>
