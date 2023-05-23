@@ -13,7 +13,6 @@ const EditTemplate = () => {
 
     const [FormData, setFormData] = useState({});
     const shouldRenderForm = window.location.pathname === '/resume/CV';
-    console.log(shouldRenderForm);
 
 
     const dispatch = useDispatch();
@@ -41,7 +40,6 @@ const EditTemplate = () => {
             // Edu2_start_year && Edu2_end_year && Edu2_degree && Edu2_details &&
             // Exp1_start_year && Exp1_end_year && Exp1_compnay_name && Exp1_details &&
             // Exp2_start_year && Exp2_end_year && Exp2_compnay_name && Exp2_details
-
         ) {
             dispatch(UpdateState(FormData))
             toast.success('Register Successfully');
@@ -63,7 +61,7 @@ const EditTemplate = () => {
     useEffect(() => {
         setDefaultFormData(persistedData.PersistedReducer.reducer);
         // setFormData(defaultValueRef.current);
-
+        console.log(FormData)
     }, [])
 
 
@@ -73,9 +71,12 @@ const EditTemplate = () => {
             {
                 shouldRenderForm === true ?
                     <Box>
+                        {
+                            console.log(FormData.Name)
+                        }
                         <Box sx={{ width: "100%" }}>
                             <Link to='/resume' >
-                                <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" },mt:4, px: 2 }}> <ReplyIcon sx={{ mr: 1, mt: -0.5 }} /> Back </Button>
+                                <Button sx={{ position: 'realtive', left: { xs: "120px", sm: "250px", md: "550px" }, mt: 4, px: 2 }}> <ReplyIcon sx={{ mr: 1, mt: -0.5 }} /> Back </Button>
                             </Link>
                         </Box>
                         <Typography color="#000" variant='h3' mt={14}>Comming Soon</Typography>
@@ -103,7 +104,12 @@ const EditTemplate = () => {
                                         <Box mt={2}>
                                             <Box>
                                                 <label htmlFor="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
-                                                <input defaultValue={DefaultFormData.Name} type="text" id="name" placeholder='Name' className='form_input' onChange={(e) => setFormData({ ...FormData, Name: e.target.value })} /><br />
+                                                <input
+                                                    value={DefaultFormData.Name}
+                                                    type="text" id="name" placeholder='Name'
+                                                    className='form_input'
+                                                    onChange={(e) => setFormData({ ...FormData, Name: e.target.value })}
+                                                /><br />
                                             </Box>
                                             <Box mt={1}>
                                                 <label for="position" style={{ fontWeight: "600", }}>Job Position <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span> </label>
