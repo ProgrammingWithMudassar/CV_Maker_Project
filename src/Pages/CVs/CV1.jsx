@@ -35,12 +35,12 @@ const CV1 = () => {
         <Button sx={{ p: 2 }} > Submit </Button>
         <ReactToPrint
           trigger={() => <Button sx={{ p: 2 }}>Print</Button>}
-          content={() => this.componentRef}
+          content={() =>  componentRef.current}
         />
       </Box>
       <Container className='CV_container'>
         {/* Left  */}
-        <Grid container spacing={4} ref={componentRef} >
+        <Grid container spacing={4} ref={componentRef} sx={{p:4}}>
           <Grid item xs={4} textAlign='left' backgroundColor='#053D71' color="#fff" >
             <Box sx={{ height: '1050px' }}>
               <Box className="ImgBoxInCv">

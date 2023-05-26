@@ -4,9 +4,7 @@ const PrivateRoutes = () => {
     //Before creating Resume you should login in applicaiton( Authentice user can edit template ).
     let auth = { 'token': true }
     return (
-        auth.token ?
-            <Outlet /> : <Navigate to='/login' />
-           
+        auth.token ? <Outlet /> : <Navigate to='/login' />
     )
 }
 
