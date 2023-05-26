@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import { Container, Box, Button, Grid, Typography, Divider } from '@mui/material'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
@@ -7,11 +7,13 @@ import LinkIcon from '@mui/icons-material/Link';
 import EditIcon from '@mui/icons-material/Edit';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ReactToPrint from 'react-to-print';
 import '../Style.css'
 
 const CV1 = () => {
 
   const [FormData, setFormData] = useState([]);
+  const componentRef = useRef();
   const persistedData = useSelector((state) => state);
 
   useEffect(() => {
@@ -25,16 +27,20 @@ const CV1 = () => {
 
   return (
     <Box mt={4}>
-       <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
         <Link to='/'>
           <Button sx={{ p: 2 }} > Go Main </Button>
         </Link>
         <Button sx={{ p: 2 }} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit </Button>
         <Button sx={{ p: 2 }} > Submit </Button>
+        <ReactToPrint
+          trigger={() => <Button sx={{ p: 2 }}>Print</Button>}
+          content={() => this.componentRef}
+        />
       </Box>
       <Container className='CV_container'>
         {/* Left  */}
-        <Grid container spacing={4} >
+        <Grid container spacing={4} ref={componentRef} >
           <Grid item xs={4} textAlign='left' backgroundColor='#053D71' color="#fff" >
             <Box sx={{ height: '1050px' }}>
               <Box className="ImgBoxInCv">

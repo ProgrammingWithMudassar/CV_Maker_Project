@@ -105,7 +105,7 @@ const EditTemplate = () => {
                                             <Box>
                                                 <label htmlFor="name" style={{ fontWeight: "600", }}>Name <span className="required" style={{ color: 'red', fontSize: '0.8em' }}>*</span></label>
                                                 <input
-                                                    value={DefaultFormData.Name}
+                                                    defaultValue={DefaultFormData.Name}
                                                     type="text" id="name" placeholder='Name'
                                                     className='form_input'
                                                     onChange={(e) => setFormData({ ...FormData, Name: e.target.value })}
