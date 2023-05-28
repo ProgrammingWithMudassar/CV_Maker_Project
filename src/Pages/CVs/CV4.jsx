@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import { Container, Box, Button, Grid, Typography, Divider } from '@mui/material'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
@@ -7,6 +7,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import EditIcon from '@mui/icons-material/Edit';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ReactToPrint from 'react-to-print';
 import '../Style.css'
 
 const CV4 = () => {
