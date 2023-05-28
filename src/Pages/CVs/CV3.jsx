@@ -28,12 +28,16 @@ const CV3 = () => {
 
   return (
     <Box mt={4}>
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
+    <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: '10%', gap: 2 }}>
         <Link to='/'>
           <Button sx={{ p: 2 }} > Go Main </Button>
         </Link>
         <Button sx={{ p: 2 }} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit </Button>
         <Button sx={{ p: 2 }} > Submit </Button>
+        <ReactToPrint
+          trigger={() => <Button sx={{ p: 2 }}>Print</Button>}
+          content={() =>  componentRef.current}
+        />
       </Box>
       <Container className='CV_container'>
         {/* Left  */}

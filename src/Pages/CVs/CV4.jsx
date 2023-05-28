@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Container, Box, Button, Grid, Typography, Divider } from '@mui/material'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
@@ -34,6 +34,10 @@ const CV4 = () => {
         </Link>
         <Button sx={{ p: 2 }} onClick={goBack}> <EditIcon sx={{ mr: 1, mt: -0.5 }} /> Edit </Button>
         <Button sx={{ p: 2 }} > Submit </Button>
+        <ReactToPrint
+          trigger={() => <Button sx={{ p: 2 }}>Print</Button>}
+          content={() => componentRef.current}
+        />
       </Box>
       <Container className='CV_container'>
         {/* Left  */}
