@@ -14,6 +14,7 @@ import ReactToPrint from 'react-to-print';
 const CV2 = () => {
 
   const [FormData, setFormData] = useState([]);
+  const componentRef = useRef();
   const persistedData = useSelector((state) => state);
 
   useEffect(() => {
