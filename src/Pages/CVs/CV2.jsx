@@ -43,7 +43,7 @@ const CV2 = () => {
       <Container className='CV_container' ref={componentRef} sx={{p:4}}>
         {/* Left  */}
         <Grid container spacing={4} >
-          <Grid item xs={4} textAlign='left' backgroundColor='#053D71' color="#fff" >
+          <Grid item xs={4} textAlign='left' backgroundColor='#8f001e' color="#fff" >
             <Box sx={{ height: '1050px' }}>
               <Box className="ImgBoxInCv">
                 <Typography variant="body1" color="initial"></Typography>
@@ -165,13 +165,13 @@ const CV2 = () => {
               {/* Experince  */}
               <Box mt={4}>
                 <Typography variant="h5" fontWeight={600} my={2}>Experince.</Typography>
-                <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#8f001e", px: 0.7 }}>
                   <Typography variant="h6" fontWeight={600} >{FormData.Exp1_start_year}-{FormData.Exp1_end_year}</Typography>
                 </Box>
                 <Typography variant="h6" fontWeight={600}>{FormData.Exp1_compnay_name}</Typography>
                 <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>{FormData.Exp1_details}</Typography>
                 <Box>
-                  <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                  <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#8f001e", px: 0.7 }}>
                     <Typography variant="h6" fontWeight={600} >{FormData.Exp2_start_year}-{FormData.Exp2_end_year}</Typography>
                   </Box>
                   <Typography variant="h6" fontWeight={600}>{FormData.Exp2_compnay_name}</Typography>
@@ -181,7 +181,7 @@ const CV2 = () => {
                   {
                     FormData.Exp3_start_year && FormData.Exp3_end_year === '' ?
                       <Box>
-                        <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                        <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#8f001e", px: 0.7 }}>
                           <Typography variant="h6" fontWeight={600} >{FormData.Exp3_start_year}-{FormData.Exp3_end_year}</Typography>
                         </Box>
                         <Typography variant="h6" fontWeight={600}>{FormData.Exp3_compnay_name}</Typography>
@@ -204,13 +204,13 @@ const CV2 = () => {
               {/* Education  */}
               <Box mt={4}>
                 <Typography variant="h5" fontWeight={600} my={2}>Education.</Typography>
-                <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#8f001e", px: 0.7 }}>
                   <Typography variant="h6" fontWeight={600} >{FormData.Edu1_start_year}-{FormData.Edu1_end_year}</Typography>
                 </Box>
                 <Typography variant="h6" fontWeight={600}>{FormData.Edu1_degree}</Typography>
                 <Typography variant="body1" sx={{ textIndent: { xs: "50px" } }}>{FormData.Edu1_details}</Typography>
                 <Box>
-                  <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#053D71", px: 0.7 }}>
+                  <Box sx={{ width: "117px", color: '#fff', backgroundColor: "#8f001e", px: 0.7 }}>
                     <Typography variant="h6" fontWeight={600} >{FormData.Edu2_start_year}-{FormData.Edu2_end_year}</Typography>
                   </Box>
                   <Typography variant="h6" fontWeight={600}>{FormData.Edu2_degree}</Typography>
