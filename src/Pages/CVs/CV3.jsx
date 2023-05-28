@@ -39,7 +39,7 @@ const CV3 = () => {
           content={() =>  componentRef.current}
         />
       </Box>
-      <Container className='CV_container'>
+      <Container className='CV_container' ref={componentRef} sx={{p:4}}>
         {/* Left  */}
         <Grid container spacing={4} >
           <Grid item xs={4} textAlign='left' backgroundColor='#FFA44F' color="#fff" >
