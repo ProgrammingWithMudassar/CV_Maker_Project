@@ -27,6 +27,7 @@ function App() {
             <Route path='/resume/:id' element={<CV_Form />} />
             <Route path='/resume/:id/cv' element={<CV />} />
           </Route>
+          
         </Routes>
       </Router>
     </div>
